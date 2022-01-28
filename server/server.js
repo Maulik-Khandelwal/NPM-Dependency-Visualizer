@@ -3,7 +3,6 @@ const fetchPackage = require("package-json");
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
-const path = require('path');
 
 const app = express();
 app.use(cors());
@@ -12,9 +11,6 @@ app.use(bodyParser.json(), urlencodedParser);
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('../build'));
-    app.get('*', (req, res) => {
-        res.sendFile(path.resolve(__dirname, '..', 'build', 'index.html'));
-    });
 }
 
 let deps = {};
