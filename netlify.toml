@@ -4,7 +4,7 @@
   command = "CI= npm run build"
 
 [[redirects]]
-  from= "/*"
+  from= "/api/*"
   to = "https://npmvisualizer.herokuapp.com/:splat"
   status = 200
   force = true
